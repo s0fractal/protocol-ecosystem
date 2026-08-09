@@ -27,7 +27,7 @@ contract exists and CI enforces it".
 | **Σ-GLYPH** (`sigma-glyph`) | content-addressed, ATP-bounded, Lean-proven deterministic evaluation; hash is identity | github.com/s0fractal/sigma-glyph |
 | **Warrant** (`warrant`) | signed authority records: who was allowed to decide what, under which policy, with re-executable reasons | github.com/s0fractal/warrant |
 | **OAIP** (`oaip`) | Observed Action & Intent Protocol: content-addressed observation of what was actually done; *execution ≠ validation ≠ acceptance* | github.com/s0fractal/oaip |
-| **BOS** | typed decision graph with observer-relative assessments; source of attribution, not of meaning | (research, not adopted) |
+| **BOS** | typed decision graph with observer-relative assessments; source of attribution, not of meaning | github.com/s0fractal/BOS (research, not adopted) |
 | **SEV** | PROV Evidence View: loss-aware projection of verified receipts into canonical RDF | (research drafts, no repo yet) |
 
 ## Relation statuses (closed set)
