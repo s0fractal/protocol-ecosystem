@@ -71,7 +71,7 @@ warrant      → ~/Projects/warrant
 oaip         → ~/Projects/oaip
 BOS          → ~/Projects/BOS
 sigma-glyph  → ~/Projects/sigma-glyph
-sev drafts   → ~/Projects/specs/sev
+sev          → ~/Projects/sev
 trinity      → ~/trinity
 ```
 
@@ -98,6 +98,6 @@ trinity      → ~/trinity
 
 ---
 
-*Snapshot date for all status claims: 2026-08-09. Statuses decay; a dated row
-that was never re-checked is a `historical` claim about that date, not a
-current fact.*
+*Snapshot date for all status claims: 2026-08-09 (SEV rows re-checked
+2026-08-10). Statuses decay; a dated row that was never re-checked is a
+`historical` claim about that date, not a current fact.*
