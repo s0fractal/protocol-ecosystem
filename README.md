@@ -22,13 +22,13 @@ contract exists and CI enforces it".
 
 ## Members
 
-| Repo | One line | Public location |
-|---|---|---|
-| **Σ-GLYPH** (`sigma-glyph`) | content-addressed, ATP-bounded, Lean-proven deterministic evaluation; hash is identity | github.com/s0fractal/sigma-glyph |
-| **Warrant** (`warrant`) | signed authority records: who was allowed to decide what, under which policy, with re-executable reasons | github.com/s0fractal/warrant |
-| **OAIP** (`oaip`) | Observed Action & Intent Protocol: content-addressed observation of what was actually done; *execution ≠ validation ≠ acceptance* | github.com/s0fractal/oaip |
-| **BOS** | typed decision graph with observer-relative assessments; source of attribution, not of meaning | github.com/s0fractal/BOS (research, not adopted) |
-| **SEV** | Sealed Evidence View: snapshot-bound, receipt-aware, loss-explicit evidence projections | github.com/s0fractal/sev (research, not adopted) |
+| Repo | One line | Public location | Visibility |
+|---|---|---|---|
+| **Σ-GLYPH** (`sigma-glyph`) | content-addressed, ATP-bounded, Lean-proven deterministic evaluation; hash is identity | github.com/s0fractal/sigma-glyph | public |
+| **Warrant** (`warrant`) | signed authority records: who was allowed to decide what, under which policy, with re-executable reasons | github.com/s0fractal/warrant | public |
+| **OAIP** (`oaip`) | Observed Action & Intent Protocol: content-addressed observation of what was actually done; *execution ≠ validation ≠ acceptance* | github.com/s0fractal/oaip | public |
+| **BOS** | typed decision graph with observer-relative assessments; source of attribution, not of meaning | github.com/s0fractal/BOS (research, not adopted) | public |
+| **SEV** | Sealed Evidence View: snapshot-bound, receipt-aware, loss-explicit evidence projections | github.com/s0fractal/sev (research, not adopted) | public |
 
 ## Relation statuses (closed set)
 
@@ -52,10 +52,10 @@ contract exists and CI enforces it".
 | BOS | Warrant | authority / adoption carrier | none yet (`warrant` is a valid `scope` label and `context_cut.anchors.kind`; zero `adoption`/`decision` atoms exist; genesis key unpinned) | `proposed` | no gate; BOS Phase 3 exit criterion |
 | BOS | Σ-GLYPH | deterministic subclaim replay | none yet | `intended` | no gate; BOS Phase 4 exit criterion |
 | BOS | OAIP | action/experience context | **none — zero mentions in either direction as of 2026-08-09** | `intended` | no gate; the SEV drafts are the first artifact to even name both |
-| BOS | Trinity | general cognitive/process substrate | none (`trinity` scope label; "must not fork a second journal before E0001") | `intended` | no gate |
+| BOS | Trinity *(local-only: no public repo — this row is a claim about a workspace, not a public surface)* | general cognitive/process substrate | none (`trinity` scope label; "must not fork a second journal before E0001") | `intended` | no gate |
 | SEV | Warrant + OAIP + BOS + Σ-GLYPH | PROV Evidence View projection | a `warrant.verification-receipt@v0` contract that **does not exist yet** — SEV is explicitly blocked on it | `research` | github.com/s0fractal/sev (research bootstrap, commit `9fe95d7`); five adversarial review rounds in its profile ledger; next gate runs against an exact SEV SHA |
 | mind-os | Warrant | decision graduation demo | mind-os public JSON projection → warrant `accept`; no hard dependency either way | `research` | `oaip/examples/graduate-decision.sh` (a demo, not a gate) |
-| provenance-proto | OAIP | ancestor scratch prototype (2026-07-18) | superseded entirely | `historical` | none; kept as provenance |
+| provenance-proto *(local-only: no public repo)* | OAIP | ancestor scratch prototype (2026-07-18) | superseded entirely | `historical` | none; kept as provenance |
 | Semantica *(external)* | SEV | possible PROV-O consumer | SEV canonical N-Quads dataset | `research` | no integration; semantica ships its own `export_prov()` — the differential value is *verified* vs *asserted* provenance |
 
 ## Local paths (non-normative convenience)
