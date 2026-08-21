@@ -1,0 +1,35 @@
+name: map-check
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"   # weekly: staleness is exactly what a push won't catch
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: statuses decay — newest snapshot date must be under 45 days old
+        run: |
+          python3 - <<'PY'
+          import datetime, re, sys
+          text = open("README.md").read()
+          dates = [datetime.date.fromisoformat(d)
+                   for d in re.findall(r"\d{4}-\d{2}-\d{2}", text)]
+          if not dates:
+              sys.exit("no snapshot dates found")
+          age = (datetime.date.today() - max(dates)).days
+          print("newest snapshot date: %s (%d days old)" % (max(dates), age))
+          sys.exit(0 if age <= 45 else "map is stale: re-check rows and bump the date")
+          PY
+      - name: every public member URL must resolve
+        run: |
+          set -e
+          for repo in $(grep -o 'github.com/s0fractal/[A-Za-z0-9_-]*' README.md | sort -u); do
+            curl -sfIL -o /dev/null "https://$repo" && echo "OK  $repo" \
+              || { echo "DEAD  $repo"; exit 1; }
+          done
