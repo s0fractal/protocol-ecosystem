@@ -4,11 +4,15 @@ on:
   pull_request:
   schedule:
     - cron: "17 6 * * 1"   # weekly: staleness is exactly what a push won't catch
+
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - name: statuses decay — newest snapshot date must be under 45 days old
         run: |
           python3 - <<'PY'
