@@ -66,6 +66,15 @@ The adapter/profile step is deliberately first. A protocol feature request is
 justified only when the current owner cannot express the required behaviour
 without changing its public contract.
 
+## Coordination (non-normative)
+
+[`CAMPAIGN.md`](CAMPAIGN.md) records the current external-pressure campaign: what
+is active, what is frozen, and what decides each stream. It is a coordination
+plan and **must not be cited as a gate** — no row in the table below may draw its
+status from it, and no member repository depends on it. The file deliberately
+carries no date in its name, because the staleness check reads the newest date in
+*this* file as the map's own re-check date, and a plan is not a re-check.
+
 ## Relation statuses (closed set)
 
 | Status | Meaning |
