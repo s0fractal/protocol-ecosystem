@@ -39,9 +39,9 @@ questions. Every result recorded below cites an exact revision.
 
 | Stream | State | Budget | Owner-side limit |
 | --- | --- | --- | --- |
-| Warrant — interoperability and outside use | active | 50% | ≤2 substantive PRs; ≤1 internal review/fix cycle before handoff |
-| Σ-GLYPH / WASM bake-off | active | 25% | preregistration merged before any implementation |
-| Decision Archaeology — one external case | active | 20% | intake and admission gate before any work |
+| Warrant — one usable vertical, dogfooded | active | 50% | no new protocol, repository or governance layer |
+| Σ-GLYPH / WASM bake-off — a kill test, not development | active | 40% | preregistration merged; fixtures frozen before implementation |
+| Decision Archaeology | **frozen** | 0% | returns only for a real, unmodelled case |
 | Ecosystem map and technical hygiene | active | 5% | documentation defects only |
 | OAIP | maintenance-only | — | security, CI, compatibility, false documentation |
 | BOS, SEV | **frozen pending external demand** | 0% | security, broken CI, critical dependencies, false documentation |
@@ -65,10 +65,17 @@ would mean superseded, and neither is.
 
 ## Success criteria
 
-**Warrant.** At least one independent person installs the tool without
-synchronous help, verifies or creates a real receipt, and returns a reproducible
-result or defect. Stars, views, model reviews, and replies from the author do not
-count.
+**Warrant.** One workflow its own authors want to leave switched on in their own
+repositories: an agent-made change produces a single artifact showing what
+changed, what proposed it, which policy was in force, which evidence was checked,
+which reason can be re-executed, and what would break the verdict. Judged by
+setup time, time to a verdict a reviewer understands, manual steps required,
+tampering actually caught, and whether it reduces review work. If it does not, the
+vertical is removed rather than polished.
+
+An independent install remains the only thing that would count as external
+signal, but **it is no longer something this campaign goes looking for** — see
+the outreach decision below.
 
 **Σ-GLYPH.** Numeric thresholds are fixed in the preregistration before any
 implementation exists, and the result is published whichever side wins. If
@@ -82,6 +89,22 @@ called a drop-in replacement.
 sufficient inputs, at least one independently re-run check, and a recorded
 verdict: useful, not useful, or blocked. Absent that by the decision date, DA
 goes to maintenance.
+
+## Outreach: cancelled, not deferred
+
+**Owner decision, 2026-08-23: cold outreach is cancelled as a line of work.** No
+recipients are to be assembled and nobody is to be contacted. The draft shortlist
+and message prepared under the previous plan are withdrawn and were never sent.
+
+The reasoning is not politeness. A cold message measures the sender's existing
+reach, not the artifact: a reply says something about who is asking, and silence
+says nothing at all about whether the thing is useful. A tool worth adopting has
+to give someone a reason to arrive on their own, and this one does not have that
+reason yet — which is a fact about the tool, not about the channel.
+
+This closes the question rather than parking it: nothing here is pending
+authorization, and the absence of an external attempt is no longer to be reported
+as something waiting to happen.
 
 ## Authority boundaries
 
@@ -119,6 +142,7 @@ would have decided.
 | Date | What changed | Why | Result already known? |
 | --- | --- | --- | --- |
 | 2026-08-22 | initial statement | — | no |
+| 2026-08-23 | outreach cancelled as a line of work; Warrant's criterion moved from "an outside person installs it" to "one vertical its authors keep switched on"; Decision Archaeology frozen; bake-off budget raised to 40% and named a kill test | a cold message measures the sender's reach rather than the artifact, and no external attempt had been made under the old plan either | no |
 
 ## The metric this campaign is judged by
 
