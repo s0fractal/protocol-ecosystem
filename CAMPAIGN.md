@@ -125,7 +125,10 @@ Kherson candidate. Each of those needs its own explicit authorization.
 
 ## Decision, 2026-10-03
 
-- **Warrant** continues if there is independent use or a concrete outside pull.
+- **Warrant** continues if the vertical is one its own authors keep switched on,
+  judged by the measures above. Independent outside use would settle the question
+  faster and is still the only thing that counts as external signal — but the
+  campaign no longer goes looking for it, so its absence is not a verdict.
 - **Σ-GLYPH** remains the core runtime only on the bake-off result together with
   an externally relevant advantage; otherwise optional or frozen.
 - **Decision Archaeology** continues only with a real external case.
@@ -142,6 +145,7 @@ would have decided.
 | Date | What changed | Why | Result already known? |
 | --- | --- | --- | --- |
 | 2026-08-22 | initial statement | — | no |
+| 2026-08-23 | final decision for Warrant restated to match the success criterion above; the two had disagreed since the outreach decision, one asking for independent use and the other for a workflow its authors keep | a criterion that contradicts its own decision rule decides nothing | no |
 | 2026-08-23 | outreach cancelled as a line of work; Warrant's criterion moved from "an outside person installs it" to "one vertical its authors keep switched on"; Decision Archaeology frozen; bake-off budget raised to 40% and named a kill test | a cold message measures the sender's reach rather than the artifact, and no external attempt had been made under the old plan either | no |
 
 ## The metric this campaign is judged by
