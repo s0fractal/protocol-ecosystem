@@ -62,6 +62,10 @@ would mean superseded, and neither is.
 - No repeat model review without a new change or a new counterexample.
 - Every public artifact states one claim, one command that checks it, and one
   condition that would refute it.
+- Prefer a re-executable check to persuasive prose where the question can be
+  reduced honestly. Do not encode semantic or legal judgment merely to make it
+  executable; record the residual trust boundary and competing interpretations
+  instead.
 
 ## Success criteria
 

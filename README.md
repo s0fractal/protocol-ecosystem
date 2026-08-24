@@ -20,6 +20,47 @@ cannot carry a `normative` or `verified-compatible` status — that rule exists
 so a reader (human or model) cannot confuse "we imagine BOS↔OAIP" with "this
 contract exists and CI enforces it".
 
+## Shared design thesis: re-executability over persuasion, where possible
+
+When a claim can honestly be reduced to a bounded mechanical procedure, this
+ecosystem prefers an artifact that lets another party reproduce the path from
+pinned bytes to a verdict over prose asking that party to accept the author's
+conclusion. Persuasion is a relation between a speaker and an audience;
+re-executability is a property of an artifact. The reader's agreement is not an
+input to the latter — their machine can perform the declared check again.
+
+This does **not** eliminate trust, prove truth, or automate judgment. It moves
+the irreducible trust boundary into the open:
+
+- whether the declared check represents the question people actually care
+  about;
+- whether its inputs, provenance, and claimed authority should be accepted;
+- whether the pinned runtime, profile, and implementation assumptions are
+  adequate; and
+- what was omitted, unavailable, or deliberately left outside the check.
+
+The protocols contribute different parts of that separation without collapsing
+them into one verdict. **The table below is a design thesis, not a status
+table.** It says what each surface is *for* in this separation; the standing
+column says how much of it exists today, in the same terms the Members table
+uses. Nothing here upgrades a relation status, and a surface marked *research*
+describes an intent rather than a contract anyone can currently re-execute.
+
+| Surface | Standing | What becomes replayable or explicit | What does not follow |
+|---|---|---|---|
+| **OAIP** | adopted | the observed execution and its content-addressed record | that execution was validated or accepted |
+| **Warrant** | adopted | the named authority, policy bytes, and bounded executable reason | that a signature makes the claim true or the policy appropriate |
+| **Σ-GLYPH** | adopted | deterministic evaluation of the same canonical term under the same ATP budget | that the term expresses the right real-world question — nor, per `DA-SIGMA-0001`, that any published encoding turns outside bytes into that term |
+| **BOS** | research, not adopted | attribution and observer-relative assessments in a decision graph | one observer-independent meaning or final truth |
+| **SEV** | research, not adopted | a snapshot-bound projection together with an explicit account of loss | that the projection is complete merely because it verifies |
+| **Decision Archaeology** | application driver, not a member protocol | replay of formal facts and procedures preserved by a case | guilt, legality, intent, or the final interpretation of the case |
+
+The compact form is: **re-executability does not replace persuasion; it narrows
+persuasion's jurisdiction to an explicit semantic and trust boundary.** When a
+question cannot be reduced without pretending that judgment is computation, the
+honest artifact preserves the claim, competing interpretations, and the unknown
+instead of manufacturing an executable verdict.
+
 ## Members
 
 | Repo | One line | Public location | Visibility |
@@ -46,6 +87,13 @@ Here, **driver** means empirical demand driver, not dependency root, semantic
 source of truth, release coordinator, or governing body. Member repositories
 must not depend on Decision Archaeology. A case may discover a protocol need,
 but only the canonical owner can define and release the corresponding contract.
+
+In legal or policy-facing work, this boundary is especially strict. A case may
+replay that preserved bytes have a particular identity, that an arithmetic
+relation holds, or that a declared formal procedure evaluates a certain way. It
+must not promote those results into a finding of corruption, guilt, legality,
+good faith, or public interest. Those are interpretive claims and remain
+attributed, contestable, and subject to the authority competent to decide them.
 
 ```text
 real case
