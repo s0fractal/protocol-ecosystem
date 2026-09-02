@@ -159,7 +159,7 @@ campaign date cannot silently refresh unrelated status claims.
 | Decision Archaeology *(application)* | OAIP + Warrant + Σ-GLYPH + BOS | case-driven integration feedback loop | `case@v0` dossiers route blocked operations through evidence-bound `need@v0` packets and close them with `need-outcome@v0`; the general bridges remain local/research and each canonical owner retains authority. Its SEV field notes and constraint-cache witness are historical analysis under a retirement envelope, not a live integration | `research` | [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91); [case-derived needs loop](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/docs/case-derived-needs.md); [first outcome](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/outcomes/DA-SIGMA-0001.json); [SEV consumer status envelope `efba9a8`](https://github.com/s0fractal/decision-archaeology/commit/efba9a8b0959e34f277c8078c43ee02efecd4f6d) |
 | Decision Archaeology *(application)* | Σ-GLYPH | claim-bound exact-sum replay profile | application-owned `sigma-money-add-eq@v0` consumes published `sigma-glyph==0.6.7` Book I bytes, C1, and bounded evaluation; compatibility is for that exact pin and does not add the profile to the Σ-GLYPH standard | `verified-compatible` | DA [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91): 4 frozen vectors + barite case 9/9 + outcome receipt; Σ-GLYPH [`master@01069d0`](https://github.com/s0fractal/sigma-glyph/commit/01069d0410e6fc3b37d5dfeea1c58939e7ff6350): owner-classified `application-adapter`, packet `fulfilled` |
 | mind-os | Warrant | decision graduation demo | mind-os public JSON projection → warrant `accept`; no hard dependency either way | `research` | `oaip/examples/graduate-decision.sh` (a demo, not a gate) |
-| provenance-proto *(local-only: no public repo)* | OAIP | ancestor scratch prototype (2026-07-18) | superseded entirely | `historical` | none; kept as provenance |
+| provenance-proto *(local-only: no public repo)* | OAIP | ancestor scratch prototype (2026-07-18) | superseded entirely; the local directory may be removed from the active workspace | `historical` | OAIP initial commit `00dd75a`; [retirement and lineage record](retirements/PROVENANCE-PROTO-RETIREMENT-2026-09-02.md). No runtime dependency or current protocol status |
 | Semantica *(external)* | SEV | historical possible-consumer note | SEV canonical N-Quads dataset | `historical` | no integration ever existed; retained only to show the consumer hypothesis that did not materialize |
 
 ## Local paths (non-normative convenience)
@@ -208,8 +208,8 @@ trinity      → ~/trinity
 
 ---
 
-*Map-wide status review: 2026-08-09. SEV rows received a bounded retirement
-update on 2026-09-02; that update does not refresh unrelated rows. The Decision
+*Map-wide status review: 2026-08-09. SEV and provenance-proto received bounded
+retirement updates on 2026-09-02; those updates do not refresh unrelated rows. The Decision
 Archaeology rows were checked 2026-08-21 at
 `main@1657954` against Σ-GLYPH `master@01069d0`. Statuses decay; a dated row that was never
 re-checked is a `historical` claim about that date, not a current fact.*
