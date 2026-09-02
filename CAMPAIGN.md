@@ -1,5 +1,10 @@
 # External-pressure campaign — decision date 2026-10-03
 
+> **FROZEN HISTORICAL RECORD.** `protocol-ecosystem` was retired as an active
+> coordination surface on 2026-09-02. The schedules, active streams, budgets,
+> and future decision language below preserve the last campaign state; they are
+> not current instructions or portfolio status. See [`RETIREMENT.md`](RETIREMENT.md).
+
 **This is a coordination plan, not a source of protocol semantics.** Nothing here
 grants, upgrades, or withdraws any protocol status. Member repositories do not
 depend on it, and no row in [`README.md`](README.md) may cite it as a gate. If

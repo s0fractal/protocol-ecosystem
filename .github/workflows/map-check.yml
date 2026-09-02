@@ -1,9 +1,7 @@
-name: map-check
+name: retirement-invariant
 on:
   push:
   pull_request:
-  schedule:
-    - cron: "17 6 * * 1"   # weekly: staleness is exactly what a push won't catch
 
 permissions:
   contents: read
@@ -13,55 +11,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - name: statuses decay — map-wide review must be under 45 days old
+      - name: retired repository exposes no live map
         run: |
           python3 - <<'PY'
-          import datetime, re, sys
-          text = open("README.md").read()
-          matches = re.findall(r"Map-wide status review: (\d{4}-\d{2}-\d{2})", text)
-          if len(matches) != 1:
-              sys.exit("expected exactly one map-wide status review date")
-          reviewed = datetime.date.fromisoformat(matches[0])
-          age = (datetime.date.today() - reviewed).days
-          print("map-wide status review: %s (%d days old)" % (reviewed, age))
-          sys.exit(0 if age <= 45 else "map is stale: re-check all rows and bump the map-wide date")
+          from pathlib import Path
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          retirement = Path("RETIREMENT.md").read_text(encoding="utf-8")
+          campaign = Path("CAMPAIGN.md").read_text(encoding="utf-8")
+
+          required_readme = (
+              "# protocol-ecosystem — archived",
+              "**Disposition:** `ARCHIVED`",
+              "## Successor boundaries",
+              "## Reactivation boundary",
+          )
+          for marker in required_readme:
+              if marker not in readme:
+                  raise SystemExit(f"retirement envelope missing: {marker}")
+
+          forbidden_live_map = (
+              "## Members",
+              "## Relations",
+              "Map-wide status review:",
+          )
+          for marker in forbidden_live_map:
+              if marker in readme:
+                  raise SystemExit(f"live map surface reintroduced: {marker}")
+
+          required_retirement = (
+              "status: ARCHIVED",
+              "mode: FUNCTION_DECOMPOSED",
+              "last_active_snapshot: f819c05bf12a7cdd52176a8bc899351b453154d3",
+              "## Known loss",
+              "## Reactivation rule",
+          )
+          for marker in required_retirement:
+              if marker not in retirement:
+                  raise SystemExit(f"retirement record missing: {marker}")
+
+          if "**FROZEN HISTORICAL RECORD.**" not in campaign:
+              raise SystemExit("historical campaign lacks frozen-status banner")
+
+          print("retirement envelope and historical boundary intact")
           PY
-      - name: abandoned SEV cannot re-enter the active surface implicitly
-        run: |
-          python3 - <<'PY'
-          import sys
-
-          text = open("README.md").read()
-
-          def section(start, end):
-              try:
-                  return text.split(start, 1)[1].split(end, 1)[0]
-              except IndexError:
-                  sys.exit("map section missing: %s .. %s" % (start, end))
-
-          members = section("## Members\n", "## Historical and abandoned trajectories\n")
-          historical = section("## Historical and abandoned trajectories\n",
-                               "## Application drivers (non-normative)\n")
-          relations = section("## Relations\n", "## Local paths (non-normative convenience)\n")
-
-          if "| **SEV**" in members:
-              sys.exit("SEV re-entered active Members without re-adoption")
-          if ("| **SEV** (" not in historical
-                  or "| `ABANDONED`" not in historical
-                  or "SEV-ARCHIVE-ACT-2026-09-02.md" not in historical):
-              sys.exit("SEV historical tombstone missing")
-
-          sev_rows = [line for line in relations.splitlines()
-                      if line.startswith("| SEV |")]
-          if len(sev_rows) != 1 or "| `historical` |" not in sev_rows[0]:
-              sys.exit("expected exactly one historical SEV relation row")
-
-          print("SEV excluded from active Members; historical tombstone and relation present")
-          PY
-      - name: every public member URL must resolve
-        run: |
-          set -e
-          for repo in $(grep -o 'github.com/s0fractal/[A-Za-z0-9_-]*' README.md | sort -u); do
-            curl -sfIL -o /dev/null "https://$repo" && echo "OK  $repo" \
-              || { echo "DEAD  $repo"; exit 1; }
-          done
