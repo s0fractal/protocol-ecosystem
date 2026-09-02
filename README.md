@@ -52,7 +52,7 @@ describes an intent rather than a contract anyone can currently re-execute.
 | **Warrant** | adopted | the named authority, policy bytes, and bounded executable reason | that a signature makes the claim true or the policy appropriate |
 | **Σ-GLYPH** | adopted | deterministic evaluation of the same canonical term under the same ATP budget | that the term expresses the right real-world question — nor, per `DA-SIGMA-0001`, that any published encoding turns outside bytes into that term |
 | **BOS** | research, not adopted | attribution and observer-relative assessments in a decision graph | one observer-independent meaning or final truth |
-| **SEV** | research, not adopted | a snapshot-bound projection together with an explicit account of loss | that the projection is complete merely because it verifies |
+| **SEV** | historical — `ABANDONED` 2026-09-02 | a snapshot-bound projection together with an explicit account of loss | that the projection is complete merely because it verifies; no replacement implements the SEV format |
 | **Decision Archaeology** | application driver, not a member protocol | replay of formal facts and procedures preserved by a case | guilt, legality, intent, or the final interpretation of the case |
 
 The compact form is: **re-executability does not replace persuasion; it narrows
@@ -69,7 +69,15 @@ instead of manufacturing an executable verdict.
 | **Warrant** (`warrant`) | signed authority records: who was allowed to decide what, under which policy, with re-executable reasons | github.com/s0fractal/warrant | public |
 | **OAIP** (`oaip`) | Observed Action & Intent Protocol: content-addressed observation of what was actually done; *execution ≠ validation ≠ acceptance* | github.com/s0fractal/oaip | public |
 | **BOS** | typed decision graph with observer-relative assessments; source of attribution, not of meaning | github.com/s0fractal/BOS (research, not adopted) | public |
-| **SEV** | Sealed Evidence View: snapshot-bound, receipt-aware, loss-explicit evidence projections | github.com/s0fractal/sev (research, not adopted) | public |
+
+## Historical and abandoned trajectories
+
+These repositories remain available as provenance but are excluded from the
+default active member set. Historical availability is not re-adoption.
+
+| Repo | Disposition | Preserved value | Reactivation boundary |
+|---|---|---|---|
+| **SEV** ([repository](https://github.com/s0fractal/sev)) | `ABANDONED` by owner decision on 2026-09-02; never adopted | sealed snapshot byte-core, projection-scoped `loss_manifest`, and the failed refund-slice controls | a new proposal must name a concrete consumer and current owner-defined contracts; [`RETIREMENT.md@5b199de`](https://github.com/s0fractal/sev/blob/5b199de24a17e0f273dc96d62c98904797e7cf77/RETIREMENT.md) is the exact status envelope |
 
 ## Application drivers (non-normative)
 
@@ -81,7 +89,7 @@ cannot upgrade a relation status by filing a feature request.
 
 | Repo | Ecosystem role | Authority boundary | Evidence | Visibility |
 |---|---|---|---|---|
-| **Decision Archaeology** (`decision-archaeology`) | case-driven demand driver and reference consumer for reproducible retrospective investigations | owns investigation workflow and local presentation/storage models only; OAIP, Warrant, Σ-GLYPH, BOS, and SEV retain their existing contract ownership | [github.com/s0fractal/decision-archaeology](https://github.com/s0fractal/decision-archaeology); [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91) contains the first executable case, `needs@v0`, and the first fulfilled cross-repository outcome | public |
+| **Decision Archaeology** (`decision-archaeology`) | case-driven demand driver and reference consumer for reproducible retrospective investigations | owns investigation workflow and local presentation/storage models only; OAIP, Warrant, Σ-GLYPH, and BOS retain their existing contract ownership. Historical SEV references carry no live contract authority | [github.com/s0fractal/decision-archaeology](https://github.com/s0fractal/decision-archaeology); [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91) contains the first executable case, `needs@v0`, and the first fulfilled cross-repository outcome | public |
 
 Here, **driver** means empirical demand driver, not dependency root, semantic
 source of truth, release coordinator, or governing body. Member repositories
@@ -120,8 +128,9 @@ without changing its public contract.
 is active, what is frozen, and what decides each stream. It is a coordination
 plan and **must not be cited as a gate** — no row in the table below may draw its
 status from it, and no member repository depends on it. The file deliberately
-carries no date in its name, because the staleness check reads the newest date in
-*this* file as the map's own re-check date, and a plan is not a re-check.
+carries no date in its name. The staleness check reads only the dedicated
+map-wide review marker at the end of this file; a newer bounded row update or a
+campaign date cannot silently refresh unrelated status claims.
 
 ## Relation statuses (closed set)
 
@@ -132,7 +141,7 @@ carries no date in its name, because the staleness check reads the newest date i
 | `proposed` | a written proposal/ADR exists; no implementation or gate |
 | `intended` | stated intention in prose only; nothing written as a contract |
 | `research` | drafts/experiments; expected to change without notice |
-| `historical` | superseded; kept as provenance, not as a live surface |
+| `historical` | removed from the live relation surface and kept as provenance; the row must state whether the cause was supersession, abandonment, or another retirement mode |
 
 ## Relations
 
@@ -144,14 +153,14 @@ carries no date in its name, because the staleness check reads the newest date i
 | OAIP | Σ-GLYPH | `ski@v1` validation runtime | reserved identifier only — claim 0.1 MUST reject it | `proposed` | reject vector in `oaip/examples/record-vectors.json` (the gate enforces the *absence*) |
 | BOS | Warrant | authority / adoption carrier | none yet (`warrant` is a valid `scope` label and `context_cut.anchors.kind`; zero `adoption`/`decision` atoms exist; genesis key unpinned) | `proposed` | no gate; BOS Phase 3 exit criterion |
 | BOS | Σ-GLYPH | deterministic subclaim replay | none yet | `intended` | no gate; BOS Phase 4 exit criterion |
-| BOS | OAIP | action/experience context | **none — zero mentions in either direction as of 2026-08-09** | `intended` | no gate; the SEV drafts are the first artifact to even name both |
+| BOS | OAIP | action/experience context | **none — zero mentions in either direction as of 2026-08-09** | `intended` | no gate; the historical SEV drafts were the first artifact to even name both |
 | BOS | Trinity *(local-only: no public repo — this row is a claim about a workspace, not a public surface)* | general cognitive/process substrate | none (`trinity` scope label; "must not fork a second journal before E0001") | `intended` | no gate |
-| SEV | Warrant + OAIP + BOS + Σ-GLYPH | PROV Evidence View projection | a `warrant.verification-receipt@v0` contract that **does not exist yet** — SEV is explicitly blocked on it | `research` | github.com/s0fractal/sev (research bootstrap, commit `9fe95d7`); five adversarial review rounds in its profile ledger; next gate runs against an exact SEV SHA |
-| Decision Archaeology *(application)* | OAIP + Warrant + Σ-GLYPH + BOS + SEV | case-driven integration feedback loop | `case@v0` dossiers route blocked operations through evidence-bound `need@v0` packets and close them with `need-outcome@v0`; the general bridges remain local/research and each canonical owner retains authority | `research` | [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91); [case-derived needs loop](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/docs/case-derived-needs.md); [first outcome](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/outcomes/DA-SIGMA-0001.json) |
+| SEV | Warrant + OAIP + BOS + Σ-GLYPH | historical PROV Evidence View projection | the anticipated SEV receipt composition did not become a cross-repository contract: Warrant closed WRT-003 in favour of a Warrant-owned report, the OAIP/BOS receipt surfaces did not exist, and no consumer adopted the projection | `historical` | SEV public surface `master@33a08a6`; terminal negative slice `author/vertical-slice-refund@4453bf3`; Warrant closure `25bd44c`; retirement record `5b199de`; owner disposition `ABANDONED` on 2026-09-02. This row preserves provenance and grants no current status |
+| Decision Archaeology *(application)* | OAIP + Warrant + Σ-GLYPH + BOS | case-driven integration feedback loop | `case@v0` dossiers route blocked operations through evidence-bound `need@v0` packets and close them with `need-outcome@v0`; the general bridges remain local/research and each canonical owner retains authority. Its SEV field notes and constraint-cache witness are historical analysis under a retirement envelope, not a live integration | `research` | [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91); [case-derived needs loop](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/docs/case-derived-needs.md); [first outcome](https://github.com/s0fractal/decision-archaeology/blob/1657954ea4142842254623819c3a6b066ac46f91/outcomes/DA-SIGMA-0001.json); [SEV consumer status envelope `efba9a8`](https://github.com/s0fractal/decision-archaeology/commit/efba9a8b0959e34f277c8078c43ee02efecd4f6d) |
 | Decision Archaeology *(application)* | Σ-GLYPH | claim-bound exact-sum replay profile | application-owned `sigma-money-add-eq@v0` consumes published `sigma-glyph==0.6.7` Book I bytes, C1, and bounded evaluation; compatibility is for that exact pin and does not add the profile to the Σ-GLYPH standard | `verified-compatible` | DA [`main@1657954`](https://github.com/s0fractal/decision-archaeology/commit/1657954ea4142842254623819c3a6b066ac46f91): 4 frozen vectors + barite case 9/9 + outcome receipt; Σ-GLYPH [`master@01069d0`](https://github.com/s0fractal/sigma-glyph/commit/01069d0410e6fc3b37d5dfeea1c58939e7ff6350): owner-classified `application-adapter`, packet `fulfilled` |
 | mind-os | Warrant | decision graduation demo | mind-os public JSON projection → warrant `accept`; no hard dependency either way | `research` | `oaip/examples/graduate-decision.sh` (a demo, not a gate) |
 | provenance-proto *(local-only: no public repo)* | OAIP | ancestor scratch prototype (2026-07-18) | superseded entirely | `historical` | none; kept as provenance |
-| Semantica *(external)* | SEV | possible PROV-O consumer | SEV canonical N-Quads dataset | `research` | no integration; semantica ships its own `export_prov()` — the differential value is *verified* vs *asserted* provenance |
+| Semantica *(external)* | SEV | historical possible-consumer note | SEV canonical N-Quads dataset | `historical` | no integration ever existed; retained only to show the consumer hypothesis that did not materialize |
 
 ## Local paths (non-normative convenience)
 
@@ -166,7 +175,7 @@ warrant      → ~/Projects/warrant
 oaip         → ~/Projects/oaip
 BOS          → ~/Projects/BOS
 sigma-glyph  → ~/Projects/sigma-glyph
-sev          → ~/Projects/sev
+sev          → ~/Projects/sev  (historical, ABANDONED; not in active set)
 decision-archaeology → ~/Projects/decision-archaeology
 trinity      → ~/trinity
 ```
@@ -199,7 +208,8 @@ trinity      → ~/trinity
 
 ---
 
-*Snapshot date for the original status claims: 2026-08-09 (SEV rows re-checked
-2026-08-10). The Decision Archaeology rows were checked 2026-08-21 at
+*Map-wide status review: 2026-08-09. SEV rows received a bounded retirement
+update on 2026-09-02; that update does not refresh unrelated rows. The Decision
+Archaeology rows were checked 2026-08-21 at
 `main@1657954` against Σ-GLYPH `master@01069d0`. Statuses decay; a dated row that was never
 re-checked is a `historical` claim about that date, not a current fact.*

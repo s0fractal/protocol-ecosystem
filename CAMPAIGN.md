@@ -44,11 +44,14 @@ questions. Every result recorded below cites an exact revision.
 | Decision Archaeology | **frozen** | 0% | returns only for a real, unmodelled case |
 | Ecosystem map and technical hygiene | active | 5% | documentation defects only |
 | OAIP | maintenance-only | — | security, CI, compatibility, false documentation |
-| BOS, SEV | **frozen pending external demand** | 0% | security, broken CI, critical dependencies, false documentation |
+| BOS | **frozen pending external demand** | 0% | security, broken CI, critical dependencies, false documentation |
+| SEV | **abandoned 2026-09-02** | 0% | preservation, security, and correction of false historical claims only; reactivation requires a new owner act |
 
-BOS and SEV keep their existing `research` status in the map. Frozen is a
-statement about this campaign's attention, not about their standing: `historical`
-would mean superseded, and neither is.
+BOS keeps its existing `research` status in the map. SEV no longer does: after
+the terminal refund-slice negative result, closure of the Warrant receipt
+direction, and absence of a consumer, the owner ended the trajectory as
+`ABANDONED`. The map uses its closed relation status `historical`; this does not
+mean refuted or losslessly superseded.
 
 ## Rules
 
@@ -137,7 +140,9 @@ Kherson candidate. Each of those needs its own explicit authorization.
   an externally relevant advantage; otherwise optional or frozen.
 - **Decision Archaeology** continues only with a real external case.
 - **OAIP** stays maintenance-only until a consumer exists.
-- **BOS / SEV** stay frozen pending demand.
+- **BOS** stays frozen pending demand.
+- **SEV** remains abandoned and outside the active member set unless a separate
+  re-adoption act names a concrete consumer and current contracts.
 - With no external signal, the outcome is a published honest retrospective and a
   freeze — not the next layer.
 
@@ -151,6 +156,7 @@ would have decided.
 | 2026-08-22 | initial statement | — | no |
 | 2026-08-23 | final decision for Warrant restated to match the success criterion above; the two had disagreed since the outreach decision, one asking for independent use and the other for a workflow its authors keep | a criterion that contradicts its own decision rule decides nothing | no |
 | 2026-08-23 | outreach cancelled as a line of work; Warrant's criterion moved from "an outside person installs it" to "one vertical its authors keep switched on"; Decision Archaeology frozen; bake-off budget raised to 40% and named a kill test | a cold message measures the sender's reach rather than the artifact, and no external attempt had been made under the old plan either | no |
+| 2026-09-02 | SEV moved from frozen research to `ABANDONED`; the ecosystem map retains it as historical provenance | its enabling Warrant receipt direction had closed, no OAIP/BOS receipt composition or consumer materialized, and the terminal refund slice closed `NOT YET USEFUL`; the broader loss/semantic-hygiene obligation continues in manifesto without claiming format compatibility | yes — this is a disposition based on the recorded outcome, not a prospective success criterion |
 
 ## The metric this campaign is judged by
 
