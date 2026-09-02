@@ -45,7 +45,7 @@ questions. Every result recorded below cites an exact revision.
 | Ecosystem map and technical hygiene | active | 5% | documentation defects only |
 | OAIP | maintenance-only | — | security, CI, compatibility, false documentation |
 | BOS | **frozen pending external demand** | 0% | security, broken CI, critical dependencies, false documentation |
-| SEV | **abandoned 2026-09-02** | 0% | preservation, security, and correction of false historical claims only; reactivation requires a new owner act |
+| SEV | **abandoned and GitHub-archived 2026-09-02** | 0% | preservation, security, and correction of false historical claims only; reactivation requires a new owner act |
 
 BOS keeps its existing `research` status in the map. SEV no longer does: after
 the terminal refund-slice negative result, closure of the Warrant receipt

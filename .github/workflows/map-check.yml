@@ -46,7 +46,9 @@ jobs:
 
           if "| **SEV**" in members:
               sys.exit("SEV re-entered active Members without re-adoption")
-          if "| **SEV** (" not in historical or "| `ABANDONED`" not in historical:
+          if ("| **SEV** (" not in historical
+                  or "| `ABANDONED`" not in historical
+                  or "SEV-ARCHIVE-ACT-2026-09-02.md" not in historical):
               sys.exit("SEV historical tombstone missing")
 
           sev_rows = [line for line in relations.splitlines()
